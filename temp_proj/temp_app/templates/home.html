@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}მთავარი გვერდი{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; margin-top: 4rem;">
+        <h1>მოგესალმებით ჩვენს საიტზე!</h1>
+        <p style="color: #a8a8b3; margin-bottom: 2rem; font-size: 1.1rem;">ეს არის შენი პირველი Django პროექტის მთავარი (welcome) გვერდი.</p>
+
+        <a href="{% url 'films' %}" class="btn">ფილმების ნახვა</a>
+    </div>
+{% endblock %}

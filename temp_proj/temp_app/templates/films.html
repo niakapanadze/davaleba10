@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}ფილმების სია{% endblock %}
+
+{% block content %}
+    <h1>ჩემი საყვარელი ფილმები</h1>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+        {% for film in films %}
+            <div style="background-color: #1f1f23; border: 1px solid #29292e; padding: 1.25rem; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong style="font-size: 1.1rem; color: #f7f7f8;">{{ film.title }}</strong>
+                    <div style="color: #a8a8b3; font-size: 0.9rem; margin-top: 0.3rem;">
+                        IMDB რეიტინგი: <span style="color: #e1e1e6; font-weight: 600;">{{ film.imdb }}</span>
+                    </div>
+                </div>
+                <div>
+                    {% if film.imdb > 8 %}
+                        <span style="background-color: rgba(4, 211, 97, 0.15); color: #04d361; padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">კარგი ფილმია</span>
+                    {% else %}
+                        <span style="background-color: rgba(168, 168, 179, 0.15); color: #a8a8b3; padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">სტანდარტული ფილმია</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
